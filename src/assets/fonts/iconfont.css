@@ -1,0 +1,25 @@
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1594795880045'); /* IE9 */
+  src: url('iconfont.eot?t=1594795880045#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAPYAAsAAAAAB8wAAAOJAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDBgqDHIMFATYCJAMMCwgABCAFhG0HThvjBlGUDUaf7CtsXAMpUQURAgJQAJBEzBRWHDeKVrPcrYLrAwAgHp72+3buzPxZlbab1KNYRMQTZBrJE5QqIWrV0OieyW/S5lJFZYMLtpnZxhG+yTdvedK00A3TUXezkWET22xqRzZPSj6BiWt+ROOvAAuwcLTG8SyKEtfn3zgt0LclT2i9QD3qMQOy7f//e1UzlsCY12JxeT9zTAvlBDC2gAK0R8emkrUgBfIOYxe0xMcJdBqXzXLY2j0MQhXmukDcpzICoRmz0lAb2oVacbSIV1ra04v0DHgZ/H78UxihJK3M3HriXosL1P+sP+fybDPriocjmc4JdoqMBUAhrlW6L7BF6QU2nara3lxaFSFNFWsaArGmrRv9x0tEZVZ3gxmYSfysjoDg51xGwvWfoqIdj/EOkYebqtTfPyWMtaw3DdanQLM+Fb0KQdssohl3cDHS6Zrq8+65m2/t/dN1NAtXfnV9B7TMDuudilqq4P19tNdhghHD3MOkbbwNgFntNvTex8eos7cRTwHixspGvL+Td1amlaDUwsKBc2Rcz5yN6y6xQVFPMdMVT0fG6Ri2byX1Yf+D8zvXmrIZ7AqGz9KBpIA3nQz+34WdE9bObK5jhQi+AUT4ufg2tGwaVY7cmDY6092V6YlsWPiX2iiM4DrxTaiBnwNfObPSESZfN8c3UygwwihCGVTYNpy/lff603auOt8ObRbytjkO87ELfmdFFu52t3w28gsYS2v86LqrAPFsEwCaW5sG1wXZa9sNrP27v/G9KNK+zlf/D+W9gB8bn2UYbK4L6OYF2u/ME/wpSceuoslMSy6K2BEbuewq53vAIMY1/k89DAoO1450ria0G0kgaTMGWbsJfCEvQEuXDaja7UCneW2nuwzhbKJ0YM4SgNDvGpJenyDr94Iv5AC0jPqCqj9s0OlcDF3ZZSpo+AHHSGAXnPRDKjGD2DYRHtYOYtmrIZ6WBexRzD00Bgty8/O5NmxgPsUOj08uFIJAwpkOW8HTsKYxaHKmYEnkuoUwK/PySNU35UpMB+EOcBgiYC7QJD+IkjAG4vUXwgs/PwiTeWkQ3tBRFR6FcR50cqhArvwO+Da10anjVr7i4SMrJAgERHCMDmoFTkyz0gxkVi9SYBIhl3tA0lQpD/UiXdW5y2v19zsGncxbcqTIUZQHVEcpM9SQdYfmZya3N0oYVHJjv0Riph8AAAAA') format('woff2'),
+  url('iconfont.woff?t=1594795880045') format('woff'),
+  url('iconfont.ttf?t=1594795880045') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1594795880045#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-mima:before {
+  content: "\e606";
+}
+
+.icon-xingmingyonghumingnichengcopy:before {
+  content: "\e62a";
+}
+
