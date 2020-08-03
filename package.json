@@ -5,7 +5,9 @@
   "scripts": {
     "start": "npm run serve",
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "build:dev": "vue-cli-service build --mode dev",
+    "build:sit": "vue-cli-service build --mode sit"
   },
   "dependencies": {
     "core-js": "^2.6.5",
