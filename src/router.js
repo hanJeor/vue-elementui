@@ -8,9 +8,7 @@ import Article from "./views/article"
 
 Vue.use(Router)
 
-export default new Router({
-    mode: 'history',
-    base: process.env.BASE_URL,
+const router =  new Router({
     routes: [
         {
             path: '/login',
@@ -62,3 +60,24 @@ export default new Router({
         }
     ]
 })
+
+// 当前页面执行router.push()当前页面地址的时候 报错处理
+const routerPush = VueRouter.prototype.push
+VueRouter.prototype.push = function push(location) {
+    return routerPush.call(this, location).catch(error=> error)
+}
+
+router.beforeEach((to, from, next) => {
+    if(to.path === '/login'){
+        sessionStorage.removeItem('user');
+    }
+    var user = sessionStorage.getItem('user');
+    if(!user && to.path !== '/login'){
+        next({
+            path: '/login'
+        })
+    }else{
+        next();
+    }
+})
+export default router;

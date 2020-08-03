@@ -1,6 +1,10 @@
+//基础路径，注意发布之前先修改这里
+// let baseUrl = process.env.VUE_APP_BASEURL;
+
 module.exports = {
     // 基本路径 baseURL已经过时
-    publicPath: './',  
+    publicPath: './', // 打包文件相对路径地址
+    // publicPath:baseUrl,
     // 输出文件目录
     outputDir: 'dist',
     // eslint-loader 是否在保存的时候检查

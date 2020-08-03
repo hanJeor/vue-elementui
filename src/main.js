@@ -9,6 +9,7 @@ import "./assets/fonts/iconfont.css";
 import VueParticles from 'vue-particles'
 import "font-awesome/scss/font-awesome.scss"
 import '@/style/index.scss'
+require('../mock)
 // 配置cookie
 // import cookies from 'vue-cookies'
 
@@ -23,19 +24,6 @@ Vue.config.productionTip = false
 Vue.use(ElementUI);
 
 
-router.beforeEach((to, from, next) => {
-    if(to.path === '/login'){
-        sessionStorage.removeItem('user');
-    }
-    var user = sessionStorage.getItem('user');
-    if(!user && to.path !== '/login'){
-        next({
-            path: '/login'
-        })
-    }else{
-        next();
-    }
-})
 
 
 
