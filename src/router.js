@@ -1,14 +1,14 @@
 import Vue from 'vue'
-import Router from 'vue-router'
+import VueRouter  from 'vue-router'
 import Login from "./views/Login.vue"
 import Layout from './components/layout/index.vue'
 import Dashboard from "./views/dashboard"
 import Article from "./views/article"
 
 
-Vue.use(Router)
+Vue.use(VueRouter)
 
-const router =  new Router({
+const router =  new VueRouter({
     routes: [
         {
             path: '/login',

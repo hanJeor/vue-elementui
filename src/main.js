@@ -9,11 +9,16 @@ import "./assets/fonts/iconfont.css";
 import VueParticles from 'vue-particles'
 import "font-awesome/scss/font-awesome.scss"
 import '@/style/index.scss'
-require('../mock)
+import axios from 'axios';
+import HttpUtils from './common/HttpUtils'
+
+
+import '../mock'
 // 配置cookie
 // import cookies from 'vue-cookies'
 
-
+Vue.use(axios);
+Vue.use(HttpUtils)
 // Vue.prototype.cookie = cookies;  //配置时候prototype.$这里的名字自己定义不是固定是cookies
 // import VuePrism from 'vue-prism'
 Vue.use(VueParticles)

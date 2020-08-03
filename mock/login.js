@@ -1,7 +1,8 @@
 import Mock from 'mockjs'
-const data = {
-    'msg':"登录成功"
+const login = () => {
+    let response = Mock.mock({
+        'msg':"登录成功"
+    })
+    return response;
 };
-Mock.mock('/api/login','post',data)
-
-export default Mock;
+Mock.mock('/mock/login',login);

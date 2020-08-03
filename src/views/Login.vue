@@ -87,6 +87,7 @@
 </template>
 
 <script>
+    import {apiUtils} from "../common/apiUtils"
 export default {
     name: "Login",
     data() {
@@ -147,7 +148,7 @@ export default {
         deleteCookie(){
             this.setCookie('', '', -1);
         },
-        // 登陆成功 保存帐号密码
+        // 显示密码
         showPassword() {
             if (this.pwdType === 'password') {
                 this.pwdType = ''
@@ -173,8 +174,18 @@ export default {
             // 为表单绑定验证功能
             this.$refs[formName].validate(valid => {
                 if (valid) {
+                    this.logining = true;
+                    let params = this.form;
                     if(this.form.username === 'admin' &&
                     this.form.password === '123456'){
+                        this.$http('login',params).then((res)=>{
+                            if(res != null){
+                                let data = res.msg;
+                                this.$message.success(data);
+                            }else{
+                                this.$message.error('网络请求错误');
+                            }
+                        })
                         this.logining = false;
                         sessionStorage.setItem('user', this.form.username);
                         // 使用 vue-router 路由到指定页面，该方式称之为编程式导航
