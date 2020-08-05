@@ -87,6 +87,7 @@
 </template>
 
 <script>
+    import axios from "axios";
     import {apiUtils} from "../common/apiUtils"
 export default {
     name: "Login",
@@ -180,8 +181,10 @@ export default {
                     this.form.password === '123456'){
                         this.$http('login',params).then((res)=>{
                             if(res != null){
-                                let data = res.msg;
-                                this.$message.success(data);
+                                if(res.errMsg === 0) {
+                                    let data = res.msg;
+                                    this.$message.success(data);
+                                }
                             }else{
                                 this.$message.error('网络请求错误');
                             }

@@ -71,7 +71,7 @@ export default {
                     "InputData": data || {},
                 }
             };
-            // console.log('请求参数 :', url, data)
+            console.log('请求参数 :', url, data)
             return new Promise((resolve, reject) => {
                 axios({
                     method: 'post',
@@ -87,7 +87,7 @@ export default {
                     data: paramData,
                     loading: loading
                 }).then((data) => {
-                    // console.log('返回参数 :', data)
+                    console.log('返回参数 :', data)
                     if (data.status && data.status === 200) {
                         resolve(data.data)
                     } else {
