@@ -10,7 +10,6 @@
     </keep-alive>
     <!--非缓存组件-->
     <router-view v-if="!$route.meta.keepAlive"/>
-    <router-view/>
   </div>
 </template>
 <style lang="stylus">

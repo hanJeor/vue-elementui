@@ -1,10 +1,20 @@
 <template>
-    <h1>dashboard</h1>
+    <div>
+        <h1>dashboard</h1>
+    </div>
 </template>
 
 <script>
     export default {
-        name: "index"
+        name: "index",
+        data(){
+            return{
+
+            }
+        },
+        methods:{
+
+        }
     }
 </script>
 
