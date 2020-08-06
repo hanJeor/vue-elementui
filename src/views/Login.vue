@@ -87,8 +87,6 @@
 </template>
 
 <script>
-    import axios from "axios";
-    import {apiUtils} from "../common/apiUtils"
 export default {
     name: "Login",
     data() {
