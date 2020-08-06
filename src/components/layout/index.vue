@@ -34,9 +34,7 @@ export default {
                         <i v-show="!isCollapse" class="el-icon-d-arrow-left"></i>
                         <i v-show="isCollapse" class="el-icon-d-arrow-right"></i>
                     </div>
-                    <el-menu default-active="/" router class="el-menu-demo tab-page" mode="horizontal" @select="handleSelect" active-text-color="#409EFF">
-                        <el-menu-item index="/">首页</el-menu-item>
-                    </el-menu>
+                    <Breadcrumb></Breadcrumb>
                     <div class="app-header-userinfo">
                         <el-dropdown trigger="hover" :hide-on-click="false">
                             <span class="el-dropdown-link">
@@ -64,10 +62,11 @@ export default {
 </template>
 <script>
 import Sidebar from '@/components/layout/Sidebar'
+import Breadcrumb from '@/components/layout/Breadcrumb'
 export default {
     name: 'Home',
     components: {
-        Sidebar
+        Sidebar,Breadcrumb
     },
     data() {
         return {
