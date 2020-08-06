@@ -14,8 +14,9 @@
         </div>
         <el-menu class="el-menu-vertical-demo"
                 :default-active="defaultActive"
-                 router
-                 :collapse="collapse">
+                :collapse-transition="false"
+                router
+                :collapse="collapse">
             <SidebarItem v-for="(item,idx) in routes"
                          :subroute="item"
                          :fatherpath="fatherPath"
