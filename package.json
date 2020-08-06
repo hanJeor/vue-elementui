@@ -16,6 +16,7 @@
     "element-ui": "^2.13.2",
     "font-awesome": "^4.7.0",
     "mockjs": "^1.1.0",
+    "nprogress": "^0.2.0",
     "sass": "^1.26.10",
     "vue": "^2.6.10",
     "vue-cookie": "^1.1.4",
