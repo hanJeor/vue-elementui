@@ -56,14 +56,18 @@ export default {
                 <el-main class="app-body">
                     <template>
                         <!--<transition name="fade-transform" mode="out-in">-->
-                            <!--<router-view />-->
-                            <keep-alive>
-                               <!--缓存组件-->
-                                <router-view v-if="$route.meta.keepAlive"/>
-                            </keep-alive>
-                            <!--非缓存组件-->
-                            <router-view v-if="!$route.meta.keepAlive"/>
-                        <!--</transition>-->
+                        <!--<router-view />-->
+                                <keep-alive>
+                                    <!--缓存组件-->
+                                    <transition enter-class="fade-transform-enter" leave-class="fade-transform-leave" enter-active-class="fade-transform-enter-active" leave-active-class="fade-transform-leave-active-to">
+                                        <router-view v-if="$route.meta.keepAlive" />
+                                    </transition>
+                                </keep-alive>
+                                <!--非缓存组件-->
+                                <transition enter-class="fade-transform-enter" leave-class="fade-transform-leave" enter-active-class="fade-transform-enter-active" leave-active-class="fade-transform-leave-active-to">
+                                    <router-view v-if="!$route.meta.keepAlive" />
+                                </transition>
+                                <!--</transition>-->
                     </template>
                 </el-main>
             </el-container>
