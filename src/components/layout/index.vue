@@ -26,7 +26,9 @@ export default {
     <div class="app">
         <el-container>
             <el-aside class="app-side app-side-left" :class="isCollapse ? 'app-side-collapsed' : 'app-side-expanded'">
-                <Sidebar :collapse="isCollapse" :routes="$router.options.routes[1].children" />
+                <el-scrollbar wrap-class="scrollbar-wrapper" :vertical="true">
+                    <Sidebar :collapse="isCollapse" :routes="$router.options.routes[1].children" />
+                </el-scrollbar>
             </el-aside>
             <el-container>
                 <el-header class="app-header">
@@ -49,6 +51,8 @@ export default {
                         </el-dropdown>
                     </div>
                 </el-header>
+                <!--  -->
+                <tags-view />
                 <el-main class="app-body">
                     <template>
                         <transition name="fade-transform" mode="out-in">
@@ -63,10 +67,13 @@ export default {
 <script>
 import Sidebar from '@/components/layout/Sidebar'
 import Breadcrumb from '@/components/layout/Breadcrumb'
+import TagsView from '@/components/layout/TagsView'
 export default {
     name: 'Home',
     components: {
-        Sidebar,Breadcrumb
+        Sidebar,
+        Breadcrumb,
+        TagsView
     },
     data() {
         return {
@@ -106,10 +113,16 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.app-side{
-    transition:width 300ms;
+.app-side {
+    transition: width 300ms;
 }
-.app-body{
-    overflow:hidden;
+
+.app-body {
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.tags-view-container {
+    text-align: left;
 }
 </style>
