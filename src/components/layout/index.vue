@@ -55,9 +55,15 @@ export default {
                 <tags-view />
                 <el-main class="app-body">
                     <template>
-                        <transition name="fade-transform" mode="out-in">
-                            <router-view />
-                        </transition>
+                        <!--<transition name="fade-transform" mode="out-in">-->
+                            <!--<router-view />-->
+                            <keep-alive>
+                               <!--缓存组件-->
+                                <router-view v-if="$route.meta.keepAlive"/>
+                            </keep-alive>
+                            <!--非缓存组件-->
+                            <router-view v-if="!$route.meta.keepAlive"/>
+                        <!--</transition>-->
                     </template>
                 </el-main>
             </el-container>
