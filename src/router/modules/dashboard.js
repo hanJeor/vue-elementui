@@ -14,7 +14,7 @@ const dashboard = [{
             redirect:'/dashboard/dashboard1',
             meta:{title:"首页"},
             children: [
-                { path: 'dashboard1', name: '首页1', component: Dashboard, meta:{title:"首页1"} }, //需要被缓存的页面
+                { path: 'dashboard1', name: '首页1', component: Dashboard, meta:{ keepAlive: true, title:"首页1"}}, //需要被缓存的页面
                 {
                     path: 'dashboard2',
                     name: '首页2',

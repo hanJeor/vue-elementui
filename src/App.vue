@@ -1,15 +1,16 @@
 <template>
   <div id="app">
     <!-- <div id="nav">
-      <router-link to="/">Home</router-link> 
+      <router-link to="/">Home</router-link>
       <router-link to="/about">About</router-link>
     </div> -->
-    <keep-alive>
-        <!--缓存组件-->
+<!--    <keep-alive>
+        &lt;!&ndash;缓存组件&ndash;&gt;
       <router-view v-if="$route.meta.keepAlive"/>
     </keep-alive>
-    <!--非缓存组件-->
-    <router-view v-if="!$route.meta.keepAlive"/>
+    &lt;!&ndash;非缓存组件&ndash;&gt;
+    <router-view v-if="!$route.meta.keepAlive"/>-->
+    <router-view/>
   </div>
 </template>
 <style lang="stylus">
