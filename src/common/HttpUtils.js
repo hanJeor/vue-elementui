@@ -12,7 +12,16 @@ let temp = 0
 axios.defaults.baseURL = '';
 
 axios.interceptors.request.use(function (config) {
-    return config
+    //window.localStorage.getItem("accessToken") 获取token的value
+    let token = window.localStorage.getItem("accessToken") || "123456"
+    if (token) {
+        //将token放到请求头发送给服务器,将tokenkey放在请求头中
+        config.headers.accessToken = token;     
+        console.log(config.headers)
+        //也可以这种写法
+        // config.headers['accessToken'] = Token;
+         return config;
+    }
 }, function (error) {
     return Promise.reject(error)
 })
@@ -62,7 +71,7 @@ axios.interceptors.response.use(function (response) {
  */
 export default {
     install (Vue, options) {
-        Vue.prototype.$http = (url, data, loading = true, header = {}) => {
+        Vue.prototype.$http = (url, data, loading = true, header) => {
             if (url.indexOf('http') === -1 && !url.includes('/api')) {
                 url = apiUtils[url]
             }
@@ -101,7 +110,7 @@ export default {
             })
         }
         
-        Vue.prototype.$formData = (url, data, loading = true, header = {}) => {
+        Vue.prototype.$formData = (url, data, loading = true, header) => {
             if (url.indexOf('http') === -1 && !url.includes('/api')) {
                 url = apiUtils[url]
             }
@@ -134,7 +143,7 @@ export default {
                 })
             })
         }
-        Vue.prototype.$get = (url, data, loading = true, header = {}) => {
+        Vue.prototype.$get = (url, data, loading = true, header) => {
             if (url.indexOf('http') === -1) {
                 url = apiUtils[url]
             }
@@ -169,7 +178,7 @@ export default {
             })
         }
 
-        Vue.prototype.$getWith = (url, data, loading = true, header = {}) => {
+        Vue.prototype.$getWith = (url, data, loading = true, header) => {
             if (url.indexOf('http') === -1) {
                 url = apiUtils[url]
             }
