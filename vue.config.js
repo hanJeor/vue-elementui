@@ -3,12 +3,12 @@
 // cdn预加载使用
 const externals = {
   'vue': 'Vue',
-  'vue-router': 'VueRouter',
-  'vuex': 'Vuex',
-  'axios':'axios',
-  'element-ui': 'ELEMENT',
-  'nprogress': 'NProgress'
-}
+  'element-ui': 'ELEMENT'
+};
+// gzip --start
+const CompressionWebpackPlugin = require('compression-webpack-plugin')
+const productionGzip = true // 是否使用gzip
+const productionGzipExtensions = ['js', 'css'] // 需要gzip压缩的文件后缀
 module.exports = {
     // 基本路径 baseURL已经过时
     publicPath: './', // 打包文件相对路径地址
@@ -32,13 +32,13 @@ module.exports = {
                 myConfig.plugins = []
                 // gzip
                 // 2. 构建时开启gzip，降低服务器压缩对CPU资源的占用，服务器也要相应开启gzip
-                /*productionGzip && myConfig.plugins.push(
+                productionGzip && myConfig.plugins.push(
                     new CompressionWebpackPlugin({
                         test: new RegExp('\\.(' + productionGzipExtensions.join('|') + ')$'),
                         threshold: 8192,
                         minRatio: 0.8
                     })
-                )*/
+                )
                 // 去掉注释
                 myConfig.plugins.push(
                     /*new UglifyJsPlugin({
